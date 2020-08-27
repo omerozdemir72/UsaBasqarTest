@@ -19,6 +19,6 @@ Feature: Create a Country
     |name| code|
     |Turkey|TR01|
     |Germany|GM01|
-    |France |FR05    |
+    |France |FR05  |
 
 

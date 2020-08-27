@@ -55,16 +55,16 @@ public abstract  class  AbstractClass {
             wait.until(ExpectedConditions.visibilityOfAllElements(list));
 
 
-    } //                                                       hangi listeden silincek?                   hangi delete butonu?                değer ne ?              Yes butonu
+    } //                                                       hangi listeden silincek?              -  hangi delete butonu?     - değer ne ?           - Yes butonu
 
     public void deleteFunctionality(List<WebElement> name, List<WebElement> deleteButton, String value, WebElement buttonYes) throws InterruptedException {
         Thread.sleep(1000);
 
 
         for (int i = 0; i < name.size(); i++) {
-            //   silmek istedigim değeri buldugunda
+
             if (name.get(i).getText().equals(value)) {
-//          click fonksiyonunu çağır ve silme butonlarından sırası gelene tıkla
+
                 clickFunction(deleteButton.get(i));
                 clickFunction(buttonYes);
             }
