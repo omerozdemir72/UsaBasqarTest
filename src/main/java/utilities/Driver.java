@@ -15,7 +15,6 @@ public class Driver {
             System.setProperty("webdriver.chrome.driver", "C:\\Users\\omero\\Selenium\\ChromeDriver\\chromedriver.exe");
             driver=new ChromeDriver();
         }
-
         return driver;
     }
 

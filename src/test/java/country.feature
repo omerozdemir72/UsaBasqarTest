@@ -15,10 +15,9 @@ Feature: Create a Country
     Then verify data is removed "<name>"
 
     Examples:
-
     |name| code|
     |Turkey|TR01|
     |Germany|GM01|
-    |France |FR05  |
+    |France |FR05 |
 
 

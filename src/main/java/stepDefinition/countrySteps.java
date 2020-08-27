@@ -62,8 +62,8 @@ countryPage.clickPlusIcon();
     }
 
     @And("^type a name\"([^\"]*)\"$")
-    public void typeAName(String asd) throws Throwable {
-        countryPage.typeInputName(asd);
+    public void typeAName(String name) throws Throwable {
+        countryPage.typeInputName(name);
     }
 
 

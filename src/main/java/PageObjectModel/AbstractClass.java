@@ -10,6 +10,7 @@ import sun.awt.windows.ThemeReader;
 import utilities.Driver;
 
 import java.util.List;
+import java.util.Random;
 
 public abstract  class  AbstractClass {
 
@@ -19,9 +20,13 @@ public abstract  class  AbstractClass {
     WebDriverWait wait = new WebDriverWait(driver, 10);
 
     public void clickFunction(WebElement clickElement) {
+try {
+    wait.until(ExpectedConditions.elementToBeClickable(clickElement));
+    clickElement.click();
+}catch (Exception e){
 
-        wait.until(ExpectedConditions.elementToBeClickable(clickElement));
-        clickElement.click();
+    System.out.println(e.getMessage());
+}
     }
 
     public void sendKeysFunction(WebElement sendKeysElement, String value) {
@@ -73,7 +78,7 @@ public abstract  class  AbstractClass {
     }
 
 
-
+//                                                                      nereyi check edicez ?  -                    silinen değer ne ?
     public void verifyDeletedAbstractClass(List<WebElement> tableList, String value) throws InterruptedException {
         Thread.sleep(1000);
         boolean result = false;
@@ -97,6 +102,24 @@ deleteButton.click();
         Thread.sleep(1000);
         yesButton2.click();
 
+    }
+
+    public int randomGenerator(int max){
+
+        Random random = new Random();
+        int randomNum= random.nextInt(max);
+
+        return randomNum;
+    }
+
+
+    public void handleDropdown(WebElement dropdown, List<WebElement> dropdownOptions){
+
+        clickFunction(dropdown);
+
+        int randomNum =randomGenerator(dropdownOptions.size());
+
+        clickFunction(dropdownOptions.get(randomNum));
     }
 
 
