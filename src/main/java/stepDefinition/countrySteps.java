@@ -1,7 +1,9 @@
 package stepDefinition;
 
+import PageObjectModel.applicationPage;
 import PageObjectModel.countryPage;
 import PageObjectModel.loginPage;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -19,6 +21,7 @@ public class countrySteps {
 
 loginPage loginPage = new loginPage();
 countryPage countryPage = new countryPage();
+    applicationPage applicationPage= new applicationPage();
 
     @Given("^Go to mersys website$")
     public void go_to_mersys_website() throws Throwable {
@@ -58,15 +61,14 @@ countryPage.clickCountries();
 countryPage.clickPlusIcon();
     }
 
-    @And("^type a name$")
-    public void type_a_name() throws Throwable {
-countryPage.typeInputName();
+    @And("^type a name\"([^\"]*)\"$")
+    public void typeAName(String name) throws Throwable {
+        countryPage.typeInputName(name);
     }
 
-    @And("^type a code$")
-    public void type_a_code() throws Throwable {
-
-        countryPage.typeInputCode();
+    @And("^type a code\"([^\"]*)\"$")
+    public void typeACode(String code) throws Throwable {
+        countryPage.typeInputCode(code);
     }
 
     @When("^click save button$")
@@ -75,23 +77,22 @@ countryPage.typeInputName();
         countryPage.clickSaveButton();
     }
 
-    @Then("^name should be displayed$")
-    public void name_should_be_displayed() throws Throwable {
-
-        countryPage.verifyCreated2();
+    @Then("^name should be displayed \"([^\"]*)\"$")
+    public void nameShouldBeDisplayed(String arg0) throws Throwable {
+        countryPage.verifyCreated2(arg0);
     }
 
-    @And("^Remove the data$")
-    public void remove_the_data() throws Throwable {
+@And("^Remove the data$")
+public void removeTheData() throws InterruptedException {
 
+        applicationPage.clickdelete2();
+}
+
+    @Then("^verify data is removed \"([^\"]*)\"$")
+    public void verifyDataIsRemoved(String name) throws Throwable {
+
+applicationPage.verifingDeleted(name);
     }
-
-    @Then("^verify data is removed$")
-    public void verify_data_is_removed() throws Throwable {
-
-    }
-
-
 
 
 

@@ -79,14 +79,14 @@ public void clickPlusIcon(){
     clickFunction(plusIcon);
 }
 
-public void typeInputName(){
+public void typeInputName(String name){
 
-    sendKeysFunction(inputName,"Turkey");
+    sendKeysFunction(inputName,name);
 }
 
-public void typeInputCode(){
+public void typeInputCode(String code){
 
-    sendKeysFunction(inputCode,"TR01");
+    sendKeysFunction(inputCode,code);
 }
 
 
@@ -95,12 +95,15 @@ public void clickSaveButton(){
     clickFunction(saveButton);
 }
 
-public void verifyCreated2(){
+public void verifyCreated2(String name) throws InterruptedException {
 
     waitUntilList(tableListOfNames);
 
-    verifyCreated(tableListOfNames,"Turkey");
+    verifyCreated(tableListOfNames,name);
 }
+
+
+
 
 
 }
