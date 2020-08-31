@@ -1,5 +1,7 @@
 Feature: Create a City
 
+
+@SmokeTest
   Scenario Outline: City Creating and Deleting
 
     Given Go to mersys website

@@ -13,7 +13,8 @@ Feature: Create a Nationality
     And type a name "German"
     When click save button
     Then name should be displayed "German"
-    
+
+
   Scenario:Create Turkish
     And type a name "Turkish"
     When  click save button
