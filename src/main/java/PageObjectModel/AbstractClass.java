@@ -65,15 +65,19 @@ try {
     public void deleteFunctionality(List<WebElement> name, List<WebElement> deleteButton, String value, WebElement buttonYes) throws InterruptedException {
         Thread.sleep(1000);
 
+try {
+    for (int i = 0; i < name.size(); i++) {
 
-        for (int i = 0; i < name.size(); i++) {
+        if (name.get(i).getText().equals(value)) {
 
-            if (name.get(i).getText().equals(value)) {
-
-                clickFunction(deleteButton.get(i));
-                clickFunction(buttonYes);
-            }
+            clickFunction(deleteButton.get(i));
+            clickFunction(buttonYes);
         }
+    }
+}catch (Exception e){
+    System.out.println(e.getMessage());
+}
+
 
     }
 

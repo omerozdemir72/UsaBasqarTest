@@ -49,6 +49,8 @@ public class applicationPage extends AbstractClass {
             private WebElement firstElement;
 
 
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
+    private WebElement SuccessfullyMessage;
 
             @FindBy(xpath = "(//ms-delete-button[@class='ng-star-inserted'])[1]")
             private WebElement firstElementDeleteButton;
@@ -87,6 +89,9 @@ public class applicationPage extends AbstractClass {
 
         clickDeleteAndYesForSpesificElement(firstElementDeleteButton,buttonYes);
     }
+
+
+
 
 
 }

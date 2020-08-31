@@ -1,6 +1,7 @@
-Feature: Create a Country
+Feature: Create a City
 
-  Scenario Outline: Country Creating and Deleting
+  Scenario Outline: City Creating and Deleting
+
     Given Go to mersys website
     And Type the username and password and click on login button
     And Click on setup on top

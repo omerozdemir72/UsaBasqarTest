@@ -4,6 +4,7 @@ import PageObjectModel.applicationPage;
 import PageObjectModel.countryPage;
 import PageObjectModel.loginPage;
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -75,7 +76,7 @@ countryPage.clickPlusIcon();
     @When("^click save button$")
     public void click_save_button() throws Throwable {
 
-        countryPage.clickSaveButton();
+        applicationPage.clickSaveButton();
     }
 
     @Then("^name should be displayed \"([^\"]*)\"$")
@@ -93,8 +94,13 @@ public void removeTheData() throws InterruptedException {
     public void verifyDataIsRemoved(String name) throws Throwable {
 
 applicationPage.verifingDeleted(name);
-    }
 
+
+
+        }
 
 
 }
+
+
+
